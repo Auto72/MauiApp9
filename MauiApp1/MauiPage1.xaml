@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MauiApp1.MauiPage1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MauiApp1"
+    mc:Ignorable="d">
+    
+    <VerticalStackLayout>
+        <Button Text="Clear" Clicked="ButtonClear_Clicked"/>
+        <Button Text="Load"  Clicked="ButtonLoad_Clicked"/>
+        <ListView x:Name="ColorListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <!-- Box colorato -->
+                            <BoxView WidthRequest="30" HeightRequest="30" Color="{Binding Color}" VerticalOptions="Center"/>
+                            <!-- Nome del colore -->
+                            <Label Text="{Binding Name}" VerticalOptions="Center" Margin="10,0,0,0" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </VerticalStackLayout>
+</ContentPage>
