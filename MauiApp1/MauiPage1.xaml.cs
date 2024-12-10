@@ -13,7 +13,6 @@ public partial class MauiPage1 : ContentPage
 
         LoadColors();
 
-        // Associa la lista alla ListView
         ColorListView.ItemsSource = _colors;
     }
 

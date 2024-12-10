@@ -6,25 +6,26 @@
     xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:MauiApp1"
-    mc:Ignorable="d">
-    
-    <VerticalStackLayout>
-        <Button Text="Clear" Clicked="ButtonClear_Clicked"/>
-        <Button Text="Load"  Clicked="ButtonLoad_Clicked"/>
-        <ListView x:Name="ColorListView">
+    mc:Ignorable="d"
+    >
+
+    <Grid x:Name="PageGrid" RowDefinitions="Auto,Auto,*" ColumnDefinitions="*">
+
+        <Button  Grid.Row="0" Text="Clear" Clicked="ButtonClear_Clicked" BackgroundColor="LightGray" TextColor="Black" HorizontalOptions="Center"/>
+        <Button  Grid.Row="1" Text="Load"  Clicked="ButtonLoad_Clicked"  BackgroundColor="LightGray" TextColor="Black" HorizontalOptions="Center"/>
+
+        <ListView  Grid.Row="2" x:Name="ColorListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="10">
-                            <!-- Box colorato -->
+                        <HorizontalStackLayout Padding="10">
                             <BoxView WidthRequest="30" HeightRequest="30" Color="{Binding Color}" VerticalOptions="Center"/>
-                            <!-- Nome del colore -->
                             <Label Text="{Binding Name}" VerticalOptions="Center" Margin="10,0,0,0" />
-                        </StackLayout>
+                        </HorizontalStackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
-    </VerticalStackLayout>
+
+    </Grid>
 </ContentPage>

@@ -8,7 +8,12 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        MainPage = new NavigationPage(new MainPage());
+        //MainPage = new NavigationPage(new MainPage());
+    }
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        return new Window(new AppShell());
     }
 
     public static Page GetPage1() 
