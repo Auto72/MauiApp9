@@ -3,6 +3,7 @@
 public partial class App : Application
 {
     private static Page? _mauiPage1 = null;
+    private static Page? _mainPage = null;
 
     public App()
     {
@@ -13,7 +14,8 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        return new Window(new MainPage());
+        _mainPage = new NavigationPage(new MainPage());
+        return new Window(_mainPage);
     }
 
     public static Page GetPage1() 
