@@ -1,5 +1,6 @@
 ﻿using MauiApp1.Model;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace MauiApp1;
 
@@ -32,7 +33,14 @@ public partial class MauiPage1 : ContentPage
 
     private void ButtonClear_Clicked(object sender, EventArgs e)
     {
-        _colors.Clear();
+        try
+        {
+            _colors.Clear();
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.ToString());
+        }
     }
 
     private void ButtonLoad_Clicked(object sender, EventArgs e)
